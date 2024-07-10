@@ -30,7 +30,7 @@ class MessageFieldBox extends StatelessWidget {
         )
       );
 
-    return TextFormField(
+    return TextFormField(keyboardType: TextInputType.emailAddress,
       onTapOutside: (event) {
         focusNode.unfocus();
       },
@@ -41,7 +41,11 @@ class MessageFieldBox extends StatelessWidget {
         print("Submit $value");
         textController.clear();
         focusNode.requestFocus();
-      }
+        
+      },
+      onChanged: (value) {
+        print(value);
+      },
     );
   }
 }
